@@ -6,13 +6,17 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 10,
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#596a6b',
         borderBottomWidth:1,
-        borderColor:"#000"
+        borderColor:"#596a6b"
 
       },
-      tittle:{
-        fontSize:25
+      title:{
+        fontSize:25,
+        color:"#f2e916"
+      },
+      icon:{
+        color:"#f2e916"
       }
 });
 
