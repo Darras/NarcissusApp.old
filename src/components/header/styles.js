@@ -6,9 +6,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 10,
         alignItems: 'center',
-        backgroundColor: '#596a6b',
+        backgroundColor: 'black',
         borderBottomWidth:1,
-        borderColor:"#596a6b"
+        borderColor:"#f2e916"
 
       },
       title:{

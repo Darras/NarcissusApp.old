@@ -13,9 +13,9 @@ export default class Header extends Component {
                 name="ios-menu" 
                 size={30} 
                 style={styles.icon} 
-                //onPress={ ({navigator}) => navigator.openDrawer() } 
+                onPress={ () => this.props.navigation.toggleDrawer() } 
             />
-            <Text style={styles.title}>Profile</Text>
+            <Text style={styles.title}>{this.props.headertext}</Text>
             <Icon name="ios-more" size={30} style={styles.icon} />
         </View>
         )
