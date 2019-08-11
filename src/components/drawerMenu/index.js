@@ -1,12 +1,13 @@
 import React,{Component} from 'react';
+import { connect } from 'react-redux';
 
 import { 
-    Platform, 
     Dimensions,
     TouchableOpacity,
     View,
     Text,
-    Image
+    Image,
+    AsyncStorage
 } from 'react-native';
 import styles from './styles';
 
@@ -14,10 +15,15 @@ import styles from './styles';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-export default class DrawerMenu extends Component{
+class DrawerMenu extends Component{
+
+    constructor(props){
+        super(props)
+    }
+
     navLink(nav,text){
         return(
-            <TouchableOpacity style={{height:50}} onPress={() => this.props.navigation.navigate(nav)}>
+            <TouchableOpacity style={{height:50}} onPress={() => {this.props.navigation.navigate(nav)}}>
                 <Text style={styles.link}>{text}</Text>
             </TouchableOpacity>
         )
@@ -34,7 +40,7 @@ export default class DrawerMenu extends Component{
                                 </TouchableOpacity>
                             </View>
                         <View>
-                            <Text style={{color:'white',fontSize:18}}>Gabriel Darruiz</Text>
+                            <Text style={{color:'white',fontSize:18}}>{this.props.user.contact.email}</Text>
                         </View>
                     </View>
                 </View>
@@ -48,3 +54,9 @@ export default class DrawerMenu extends Component{
         )
     }
 }
+
+const mapStateToProps = state => ({
+    user: state.user
+})
+
+ export default connect(mapStateToProps)(DrawerMenu);

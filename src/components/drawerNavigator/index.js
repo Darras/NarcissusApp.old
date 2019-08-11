@@ -1,11 +1,14 @@
 import React from 'react';
 
-import { Platform, Dimensions } from 'react-native';
-import { createDrawerNavigator,createAppContainer } from 'react-navigation';
+import { Dimensions } from 'react-native';
+import { createDrawerNavigator,createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Main from '../main'
-import Profile from '../profile';
+import Main from '../../pages/main'
+import Profile from '../../pages/profile';
 import DrawerMenu from '../drawerMenu';
+import Login from '../../pages/login';
+import Register from '../../pages/register';
+
 
 const width = Dimensions.get('window').width;
 const drawerConfig = {
@@ -24,6 +27,27 @@ const drawerNavigator = createDrawerNavigator({
     }
 },drawerConfig);
 
+const authNavigator = createSwitchNavigator({
+    Auth:{
+        screen:Login
+    },
+    Redirect:{
+        screen:drawerNavigator
+    },
+    Register:{
+        screen:Register
+    }
+},{
+    initialRouteName:"Auth"
+})
+
+// const stackNavigator = createStackNavigator({
+//     Login:{
+//         screen:authNavigator
+//     }
+// });
 
 
-export default createAppContainer(drawerNavigator);
+
+//export const appSwitchContainer = createAppContainer(switchNavigator);
+export default createAppContainer(authNavigator);

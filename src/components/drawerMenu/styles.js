@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         height:170,
         backgroundColor:'black',
         borderBottomWidth:1,
-        borderColor:"#f2e916"
+        borderColor:"#f2e916",
+        paddingBottom:10,
     },
     bottomLinks:{
         flex:1,

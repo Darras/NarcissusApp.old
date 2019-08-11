@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, View} from 'react-native';
 
 import DrawerNavigator from './src/components/drawerNavigator';
 //import Menu from "./src/components/menu"
@@ -7,9 +7,9 @@ import DrawerNavigator from './src/components/drawerNavigator';
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-      <DrawerNavigator/>
-      </View>
+        <View style={styles.container}>
+          <DrawerNavigator navigation={this.props.navigation} />
+        </View>
     );
   }
 }
